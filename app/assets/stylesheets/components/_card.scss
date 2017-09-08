@@ -1,6 +1,19 @@
 .card {
   background: white;
   margin-bottom: 10px;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 8px 31px 0 rgba(0,0,0,.3);
+  opacity: 0.8;
+  &:hover,
+  &:focus {
+    transform: scale3d(1.009, 1.009, 1);
+    text-decoration: none;
+    opacity: 1;
+    &::after {
+      opacity: 1;
+    }
+  }
 }
 .card-header {
   height: 150px;
@@ -8,4 +21,25 @@
 }
 .card-body {
   padding: 30px;
+  color: white;
 }
+
+.card-description {
+  color: white;
+  text-decoration: none;
+}
+
+.card h4 {
+  padding-top: 50px;
+  font-family: 'Poiret One', cursive;
+}
+
+.cocktail-name {
+  padding-bottom: 50px;
+}
+
+.card .a {
+  text-decoration: none;
+  color: black;
+}
+

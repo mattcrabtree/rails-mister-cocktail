@@ -1,21 +1,30 @@
-<h1 class="text-center">Your cocktail list</h1>
-
-<div class="text-center padded">
-  <%= link_to "Create a cocktail", new_cocktail_path, class: "btn btn-primary" %>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.pexels.com/photos/372959/pexels-photo-372959.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb');">
+  <div class="banner-content">
+    <div class="text-center padded"><h1>Mister Cocktail</h1>
+      <h4>Find the best recipes for your favorite cocktails</h4>
+      <%= link_to "Create a cocktail", new_cocktail_path, class: "btn" %>
+    </div>
+    <!-- <a class="btn btn-primary btn-lg">Start now</a> -->
+  </div>
 </div>
+
 
 <div class="container">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card text-center">
-            <div class="card-header" style="background-image: url('http://www.seriouseats.com/images/2014/11/20141104-cocktail-party-old-fashioneds-holiday-vicky-wasik-3.jpg')">
-            </div>
-            <div class="card-body">
-            <%= link_to cocktail.name, cocktail_path(cocktail) %>
-          </div>
-        </div>
+
+    <div class="col-xs-12 col-sm-4">
+      <div class="card text-center">
+          <%= link_to cocktail_path(cocktail), class: "a" do %>
+    <% photo = cocktail.photo? ? cl_image_path(cocktail.photo, height: 300, width: 400, crop: :fill) : 'http://healthyrise.com/wp-content/uploads/2016/07/Cocktail-7.jpg'%>
+
+        <div class="card-header" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= photo %>')"></div>
+        <div class="card-category"><h4 class="cocktail-name"><%= cocktail.name %></h4></div>
       </div>
     <% end %>
+    </div>
+      <% end %>
   </div>
+
 </div>
+
