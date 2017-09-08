@@ -1,20 +1,7 @@
 <%= simple_form_for(@cocktail) do |f| %>
-  <% if @cocktail.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-      <% @cocktail.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.input :name, placeholder: "Cocktail name" %>
+  <%= f.button :submit, class: "btn btn-primary"  %>
 <% end %>

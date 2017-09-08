@@ -1,10 +1,14 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h1><%= @cocktail.name %></h1>
+        <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <%= render 'doses/list_doses', dose: dose %>
+        <% end %>
+        <%= render 'doses/form' %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @cocktail.name %>
-</p>
-
-
-<%= link_to 'Edit', edit_cocktail_path(@cocktail) %> |
-<%= link_to 'Back', cocktails_path %>
+      <%= link_to 'Back', cocktails_path %>
+    </div>
+  </div>
+</div>

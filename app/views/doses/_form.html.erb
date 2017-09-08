@@ -1,22 +1,13 @@
-<%= simple_form_for(@cocktail) do |f| %>
-  <% if @cocktail.errors.any? %>
-    <div id="error_explanation">
-      <ul>
-      <% @cocktail.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+<%= simple_form_for([@cocktail,@dose]) do |f| %>
+
+  <% if @dose.errors %>
+    <% @dose.errors.messages.each do |error|  %>
+      Error: <%= error  %>
+    <% end %>
   <% end %>
 
+  <%= f.input :description, placeholder: '20 cl of...' %>
+  <%= f.input :ingredient_id, collection: Ingredient.all %>
 
-  <div class="form-inputs">
-    <%= f.input :description %>
-    <%= f.input :cocktail_id %>
-    <%= f.input :ingredient_id %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.submit 'Create!', class: 'btn btn-primary' %>
 <% end %>
