@@ -9,7 +9,6 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 15px;
-
 }
 .banner h1 {
   font-size: 75px;
@@ -25,20 +24,19 @@
   margin-bottom: 30px;
   font-family: 'Poiret One', cursive;
 }
-
 .btn {
-  background: $red;
+  background: linear-gradient(to left,#2b5876 ,#4e4376);
   color: white;
   padding: 15px 30px;
   opacity: 0.8;
 }
-
 .btn:hover {
-  background: $red;
+  background: linear-gradient(to left,#2b5876 ,#4e4376);
   color: white;
   opacity: 1;
 }
-
-.i {
-  color: white;
-}
+// .fa {
+//   color: white;
+//   vertical-align: bottom;
+//   position: absolute;
+// }
