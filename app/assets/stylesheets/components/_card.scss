@@ -3,11 +3,11 @@
   margin-bottom: 10px;
   color: white;
   text-decoration: none;
-  box-shadow: 0 8px 31px 0 rgba(0,0,0,.3);
+  box-shadow: 0 8px 31px 0 rgba(0,0,0,.2);
   opacity: 0.9;
   &:hover,
   &:focus {
-    transform: scale3d(1.009, 1.009, 1);
+    transform: scale3d(1.020, 1.020, 1);
     text-decoration: none;
     opacity: 1;
     &::after {
